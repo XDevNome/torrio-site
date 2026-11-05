@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Torrio — fast, free download manager for Windows</title>
+<meta name="description" content="Torrio is a free download manager for Windows: multi-connection downloads with pause and resume, browser catching, video grabbing, torrents and Telegram files. No ads, no account.">
+<meta property="og:title" content="Torrio — fast, free download manager for Windows">
+<meta property="og:description" content="Multi-connection downloads, browser catching, videos, torrents and Telegram files. Free, no ads.">
+<meta property="og:image" content="assets/logo.png">
+<meta name="theme-color" content="#0b0820">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+  :root {
+    /* Brand: the logo's night-blue square with a pink → violet → cyan sweep. */
+    --night: #0b0820;
+    --panel: #171236;
+    --line: #2a2356;
+    --text: #f1eefc;
+    --weak: #a49fc6;
+    --pink: #ff4fd8;
+    --violet: #8b3dff;
+    --blue: #2f5bff;
+    --cyan: #19d9ff;
+    --sweep: linear-gradient(100deg, var(--pink), var(--violet) 40%, var(--blue) 72%, var(--cyan));
+    --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--night); color: var(--text); font: 16px/1.6 var(--font); overflow-x: hidden; }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .grad { background: var(--sweep); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+
+  header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(11, 8, 32, .72); border-bottom: 1px solid rgba(255,255,255,.06); }
+  header .wrap { display: flex; align-items: center; height: 68px; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font: 700 20px var(--display); letter-spacing: .2px; }
+  .brand:hover { text-decoration: none; }
+  .brand img { width: 34px; height: 34px; }
+  nav { display: flex; gap: 22px; margin-left: auto; align-items: center; }
+  nav a { color: var(--weak); font-size: 15px; }
+  nav a:hover { color: var(--text); text-decoration: none; }
+  .nav-cta { padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.08); color: var(--text) !important; }
+  @media (max-width: 720px) { nav a:not(.nav-cta) { display: none; } }
+
+  .hero { position: relative; padding: 84px 0 40px; text-align: center; }
+  .hero::before { content: ""; position: absolute; inset: -120px 0 auto; height: 720px; z-index: -1;
+    background: radial-gradient(600px 320px at 30% 30%, rgba(255,79,216,.22), transparent 70%),
+                radial-gradient(640px 360px at 72% 26%, rgba(25,217,255,.18), transparent 70%),
+                radial-gradient(800px 420px at 50% 60%, rgba(139,61,255,.20), transparent 70%); }
+  .hero-logo { width: 112px; height: 112px; margin: 0 auto 26px; filter: drop-shadow(0 18px 40px rgba(139,61,255,.45)); }
+  .hero h1 { font: 800 clamp(38px, 6vw, 68px)/1.04 var(--display); letter-spacing: -1.2px; margin: 0 auto 18px; max-width: 900px; text-wrap: balance; }
+  .hero p.lead { color: var(--weak); font-size: clamp(17px, 2vw, 20px); max-width: 660px; margin: 0 auto 34px; }
+  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border-radius: 14px; font: 700 17px var(--font); border: 0; cursor: pointer; color: #fff; }
+  .btn:hover { text-decoration: none; }
+  .btn svg { width: 20px; height: 20px; }
+  .btn-main { background: var(--sweep); box-shadow: 0 14px 40px rgba(139,61,255,.45), inset 0 1px 0 rgba(255,255,255,.25); }
+  .btn-main:hover { filter: brightness(1.08); }
+  .btn-ghost { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); }
+  .meta { margin-top: 14px; color: var(--weak); font-size: 14px; }
+  .shot { position: relative; margin: 64px auto 0; max-width: 1080px; }
+  .shot::before { content: ""; position: absolute; inset: 8% 6% -4%; background: var(--sweep); filter: blur(70px); opacity: .45; z-index: -1; border-radius: 40px; }
+  .shot img { border-radius: 14px; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 100px rgba(0,0,0,.6); }
+
+  .strip { border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02); margin-top: 72px; }
+  .strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px 24px; text-align: center; }
+  .strip b { display: block; font: 800 30px var(--display); }
+  .strip span { color: var(--weak); font-size: 14px; }
+  @media (max-width: 720px) { .strip .wrap { grid-template-columns: repeat(2, 1fr); row-gap: 22px; } }
+
+  section { padding: 96px 0; }
+  .kicker { font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; display: inline-block; }
+  h2 { font: 800 clamp(30px, 4vw, 44px)/1.12 var(--display); letter-spacing: -.6px; margin: 8px 0 14px; text-wrap: balance; }
+  .sub { color: var(--weak); max-width: 620px; margin: 0 0 44px; font-size: 18px; }
+  .center { text-align: center; }
+  .center .sub { margin-left: auto; margin-right: auto; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+  .card { background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 26px; }
+  .card h3 { margin: 14px 0 6px; font: 700 19px var(--display); }
+  .card p { margin: 0; color: var(--weak); font-size: 15px; }
+  .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(139,61,255,.18); }
+  .ico svg { width: 22px; height: 22px; stroke: url(#sweep); }
+
+  .split { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: center; }
+  .split.rev { grid-template-columns: 1.25fr 1fr; }
+  .split.rev .text { order: 2; }
+  @media (max-width: 900px) { .split, .split.rev { grid-template-columns: 1fr; } .split.rev .text { order: 0; } }
+  .split img { border-radius: 14px; border: 1px solid rgba(255,255,255,.1); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .ticks { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+  .ticks li { display: flex; gap: 12px; color: var(--weak); }
+  .ticks li::before { content: ""; flex: none; width: 20px; height: 20px; margin-top: 3px; border-radius: 50%; background: var(--sweep);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.6 12l1.4-1.4 2.8 2.8 5.2-5.2 1.4 1.4-6.6 6.6z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.6 12l1.4-1.4 2.8 2.8 5.2-5.2 1.4 1.4-6.6 6.6z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .ticks b { color: var(--text); font-weight: 600; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: s; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+  .step { position: relative; padding: 28px 24px 24px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--sweep); font: 800 17px var(--display); margin-bottom: 14px; }
+  .step h3 { margin: 0 0 6px; font: 700 18px var(--display); }
+  .step p { margin: 0; color: var(--weak); font-size: 15px; }
+
+  .faq { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--weak); font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--weak); margin: 12px 0 0; }
+
+  .release { max-width: 820px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 28px 30px; }
+  .release h3 { margin: 0; font: 700 22px var(--display); }
+  .release .date { color: var(--weak); font-size: 14px; margin: 2px 0 14px; }
+  .release ul { margin: 0; padding-left: 20px; color: var(--weak); }
+
+  .final { text-align: center; padding: 100px 0; position: relative; }
+  .final::before { content: ""; position: absolute; inset: 20% 20%; background: var(--sweep); filter: blur(120px); opacity: .25; z-index: -1; }
+  .final img { width: 88px; margin: 0 auto 20px; }
+
+  footer { border-top: 1px solid rgba(255,255,255,.06); padding: 30px 0 40px; color: var(--weak); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
+  footer .brand { font-size: 16px; }
+  footer .brand img { width: 24px; height: 24px; }
+  footer .links { margin-left: auto; display: flex; gap: 20px; }
+  footer a { color: var(--weak); }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fd8"/><stop offset=".45" stop-color="#8b3dff"/><stop offset="1" stop-color="#19d9ff"/></linearGradient></defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="34" height="34">Torrio</a>
+    <nav aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#tour">Tour</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta dl-link" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <img class="hero-logo" src="assets/logo.png" alt="Torrio logo" width="112" height="112">
+      <h1>Download anything. <span class="grad">Faster.</span></h1>
+      <p class="lead">Torrio splits every file across up to 32 connections, resumes where it left off, and catches downloads straight from your browser. Videos, torrents and Telegram files too. Free, with no ads and no account.</p>
+      <div class="cta" id="download">
+        <a class="btn btn-main dl-link" id="dl" href="#download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 10l6 6 6-6M4 21h16"/></svg>
+          <span id="dl-text">Download for Windows</span>
+        </a>
+        <a class="btn btn-ghost" href="#tour">See it in action</a>
+      </div>
+      <div class="meta" id="dl-meta">Free · Windows 10 and 11 (64-bit) · no administrator rights needed</div>
+      <div class="shot"><img src="assets/screen-downloads.png" alt="Torrio's main window: downloads with progress bars and a detail panel showing eight connections" width="1320" height="820"></div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div><b class="grad">32</b><span>connections per file</span></div>
+      <div><b class="grad">0</b><span>ads, trackers or accounts</span></div>
+      <div><b class="grad">1 click</b><span>updates, signed by us</span></div>
+      <div><b class="grad">35 MB</b><span>one small program</span></div>
+    </div>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Everything in one place</div>
+        <h2>One app for every kind of download</h2>
+        <p class="sub">Files, videos, torrents and Telegram media, in one window with one list.</p>
+      </div>
+      <div class="features">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Multi-connection speed</h3><p>Every file is split into parts that download at once, then joined. Watch each connection live.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3>Catches browser downloads</h3><p>Extensions for Chrome, Edge and Firefox hand clicked downloads to Torrio. Skip or block any site.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg></div><h3>Video grabber</h3><p>Save videos from web pages in the quality you want, downloaded over several connections.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v7a6 6 0 0012 0V4M6 8h4M14 8h4"/></svg></div><h3>Torrents built in</h3><p>Open magnet links and .torrent files, pick files from a tree, see peers and trackers.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg></div><h3>Telegram files</h3><p>Sign in, open a chat or channel, tick the files you want and download them all at once.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2.5 2M9 3h6"/></svg></div><h3>Queues and scheduler</h3><p>Run downloads one after another or at set times, with a speed limiter when you need bandwidth.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour" style="padding-top:20px">
+    <div class="wrap" style="display:grid;gap:110px">
+      <div class="split">
+        <div class="text">
+          <div class="kicker grad">See every connection</div>
+          <h2>Know exactly what's happening</h2>
+          <p class="sub" style="margin-bottom:0">Pick a download and the panel on the right shows its parts, each connection's progress and a live speed graph.</p>
+          <ul class="ticks">
+            <li><span><b>Filter chips</b> for active, waiting, finished and failed downloads.</span></li>
+            <li><span><b>Pause and resume</b> any file, even after a restart.</span></li>
+            <li><span><b>Convert after download</b> to MP3, MP4 and more.</span></li>
+          </ul>
+        </div>
+        <img src="assets/screen-light.png" alt="Torrio in its light theme with a failed download selected and its connections listed" width="1320" height="820" loading="lazy">
+      </div>
+      <div class="split rev">
+        <div class="text">
+          <div class="kicker grad">Your settings, simply</div>
+          <h2>Options you can actually find</h2>
+          <p class="sub" style="margin-bottom:0">Every setting in plain words, grouped by what it affects, with a search box that finds any of them.</p>
+          <ul class="ticks">
+            <li><span><b>Dark and light</b> themes.</span></li>
+            <li><span><b>Changes are saved</b> only when you say so.</span></li>
+            <li><span><b>Advanced tools</b> stay out of the way until you need them.</span></li>
+          </ul>
+        </div>
+        <img src="assets/screen-options.png" alt="Torrio's Options window showing the Browser section" width="1320" height="820" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Up and running in a minute</div>
+        <h2>Install, and forget about updates</h2>
+        <p class="sub">No administrator rights. Torrio installs for your account and keeps itself up to date.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Download</h3><p>Get the setup file with the button above.</p></div>
+        <div class="step"><h3>Install</h3><p>Open it and press Install. Torrio is added to your Start menu.</p></div>
+        <div class="step"><h3>Stay current</h3><p>New versions arrive by themselves, checked against our signature before installing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="changes" style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Latest release</div>
+        <h2>What's new</h2>
+      </div>
+      <div class="release">
+        <h3 id="ch-ver">Torrio</h3>
+        <div class="date" id="ch-date"></div>
+        <ul id="ch-list"><li>The download button above always gives you the newest version.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Questions</div>
+        <h2>Good to know</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Is Torrio really free?</summary><p>Yes. No ads, no paid tier and no account.</p></details>
+        <details><summary>Windows says “Windows protected your PC”.</summary><p>New programs from small publishers can show this SmartScreen message. Click <b>More info</b>, then <b>Run anyway</b>.</p></details>
+        <details><summary>My antivirus flagged the setup file.</summary><p>Some antivirus programs are suspicious of any new installer that sets up file types and browser integration. Torrio contains no malware. If yours objects, allow the file or report it as a false positive to your antivirus vendor.</p></details>
+        <details><summary>What does Torrio send over the internet?</summary><p>Only what you download, plus a check on this website for new versions (you can turn that off in Options). No usage data.</p></details>
+        <details><summary>How do I remove it?</summary><p>Windows <b>Settings › Apps</b>, like any other program. Files you downloaded are never touched.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <div class="wrap">
+      <img src="assets/logo.png" alt="" width="88" height="88" loading="lazy">
+      <h2>Ready when you are</h2>
+      <p class="sub" style="margin:0 auto 30px">Free for Windows 10 and 11.</p>
+      <a class="btn btn-main dl-link" href="#download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 10l6 6 6-6M4 21h16"/></svg>
+        Download Torrio
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="24" height="24">Torrio</a>
+    <span>© <span id="year">2026</span> Torrio · Download manager for Windows</span>
+    <div class="links"><a href="#faq">FAQ</a><a href="latest.json">latest.json</a></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+// Fill the download buttons and "What's new" from the same signed latest.json the app reads.
+fetch("latest.json", { cache: "no-store" })
+  .then(r => r.ok ? r.json() : Promise.reject(r.status))
+  .then(m => {
+    if (!m || !m.url || !m.version) return;
+    document.querySelectorAll(".dl-link").forEach(a => a.href = m.url);
+    document.getElementById("dl-text").textContent = "Download Torrio " + m.version;
+    const mb = m.size ? " · " + (m.size / 1048576).toFixed(1) + " MB" : "";
+    document.getElementById("dl-meta").textContent = "Free · Windows 10 and 11 (64-bit)" + mb + (m.date ? " · released " + m.date : "");
+    document.getElementById("ch-ver").textContent = "Version " + m.version;
+    document.getElementById("ch-date").textContent = m.date || "";
+    const lines = (m.notes || "").split("\n").map(s => s.replace(/^[\s\-*•]+/, "").trim()).filter(Boolean);
+    if (lines.length) {
+      const list = document.getElementById("ch-list");
+      list.textContent = "";
+      for (const l of lines) { const li = document.createElement("li"); li.textContent = l; list.appendChild(li); }
+    }
+  })
+  .catch(() => {});
+</script>
+</body>
+</html>
