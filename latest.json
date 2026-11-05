@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "date": "2026-11-06",
-  "notes": "First release of Torrio\nMulti-connection downloads with pause and resume\nBrowser catching for Chrome, Edge and Firefox\nVideo grabber, torrents and Telegram files\nAutomatic, signed updates",
-  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.0/Torrio-Setup-1.0.0.exe",
-  "size": 36094976,
-  "sha256": "ffbdf82b139b6f9f7598339a3754f034683605e0ff3ac48f57731d67b778b2b7",
-  "sig": "9e1c5420363a760badf48f8d5836f29f98d138b7796cdd07636b941dec3d5293fed28c4021ee85541ec6b40689d68dbc09d2aa49a373c78ac5d7493c0bf00a03"
+  "notes": "Long download addresses no longer push the buttons out of the download box: the address is trimmed to one line; click it to see it in full\nNew Torrio app icon",
+  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.1/Torrio-Setup-1.0.1.exe",
+  "size": 36099584,
+  "sha256": "0098b0a3ce99d81970448c5e951bd472df9814c57116180914b24f78893d0073",
+  "sig": "e881873062e170902f003eae16b5abff5fa08c342cdeabfeb6b10a7054de0a76961a4911cc3030e9b620bfaa82b01cba6f2a4f7bf12f9343cfe3d32e27ec6d0c"
 }
