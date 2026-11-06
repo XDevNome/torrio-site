@@ -1,9 +1,9 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "date": "2026-11-06",
-  "notes": "Long download addresses no longer push the buttons out of the download box: the address is trimmed to one line; click it to see it in full\nNew Torrio app icon",
-  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.1/Torrio-Setup-1.0.1.exe",
-  "size": 36099584,
-  "sha256": "0098b0a3ce99d81970448c5e951bd472df9814c57116180914b24f78893d0073",
-  "sig": "e881873062e170902f003eae16b5abff5fa08c342cdeabfeb6b10a7054de0a76961a4911cc3030e9b620bfaa82b01cba6f2a4f7bf12f9343cfe3d32e27ec6d0c"
+  "notes": "Streams from sites that limit download speed (429) now finish: Torrio slows down and continues instead of failing\nStreams locked to your IP retry over IPv6 automatically\nClearer messages when a site refuses a download or a link has expired\nYour download list and history are kept safe: a damaged file is never replaced by an empty one\nEach download can show its own progress window; closing it keeps the download in a small list at the bottom right\nThe video download button in the browser opens its own window instead of the main window\nBrowse buttons wherever a folder or file is asked for\nNew Other category for files that fit no other category\nOption to catch every file type, with exceptions\nNew browser extension (2.5.1): video download button can be dragged anywhere and hidden per site; tidier menu",
+  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.2/Torrio-Setup-1.0.2.exe",
+  "size": 36344832,
+  "sha256": "fe91cf204b354af123546ad1568dd14d9c4779830de8fdcf71d9dda000fbdfab",
+  "sig": "a0566d9fe28a8742c45f399b9f21efcd6e5acf309c6a4a064e9881766152f27f48aa1627be9f35a31f6c2a625e9fae2e86409ad865fb86589fefdf0e09752700"
 }
