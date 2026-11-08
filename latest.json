@@ -1,9 +1,9 @@
 {
-  "version": "1.0.2",
-  "date": "2026-11-06",
-  "notes": "Streams from sites that limit download speed (429) now finish: Torrio slows down and continues instead of failing\nStreams locked to your IP retry over IPv6 automatically\nClearer messages when a site refuses a download or a link has expired\nYour download list and history are kept safe: a damaged file is never replaced by an empty one\nEach download can show its own progress window; closing it keeps the download in a small list at the bottom right\nThe video download button in the browser opens its own window instead of the main window\nBrowse buttons wherever a folder or file is asked for\nNew Other category for files that fit no other category\nOption to catch every file type, with exceptions\nNew browser extension (2.5.1): video download button can be dragged anywhere and hidden per site; tidier menu",
-  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.2/Torrio-Setup-1.0.2.exe",
-  "size": 36344832,
-  "sha256": "fe91cf204b354af123546ad1568dd14d9c4779830de8fdcf71d9dda000fbdfab",
-  "sig": "a0566d9fe28a8742c45f399b9f21efcd6e5acf309c6a4a064e9881766152f27f48aa1627be9f35a31f6c2a625e9fae2e86409ad865fb86589fefdf0e09752700"
+  "version": "1.0.3",
+  "date": "2026-11-08",
+  "notes": "New add-ons, included with Torrio and usable on their own: Torrio Player, Torrio Music and Torrio Converter\nTorrio Music: your library from your folders, playlists, gapless playback, a 10-band equaliser, loudness levelling, night mode, sleep timer, mini player and media keys\nTorrio Player plays any video on the graphics card: smooth 4K, instant seeking with previews, subtitles (also below the picture), audio tracks, speed, mini player, resume\nTorrio Converter: uses the graphics card, copies instead of converting when nothing needs changing, trims, presets for phones, TV and WhatsApp\nOpen the add-ons from Torrio's tray icon, their own desktop icons, or File Explorer's Open with (Options › Add-ons)\nFiles Torrio opens get their own icons: torrent, video and audio\nOnly one Torrio runs at a time, even when the browser starts it several times; the Firefox video button starts Torrio and the download when it was closed\nThe installer can fetch the player engine and video tools right away; removing Torrio ends with its own goodbye screen\nOpen folder buttons now show the right folder",
+  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.3/Torrio-Setup-1.0.3.exe",
+  "size": 39638016,
+  "sha256": "be4dbb61283d41f83dd0be707b4d231b3925d65b4b204f9201e9732f171198cc",
+  "sig": "9eb387132e52b44d5cdefa11513b425029eaa10f68f90264bb0bd1c4f0f972cee3cdbb64a4e2da167f4d7722420cb3cc411b44597398b55d8f1293061ef2d301"
 }

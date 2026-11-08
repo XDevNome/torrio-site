@@ -57,7 +57,10 @@
         "Telegram file downloads",
         "Queues, scheduler and speed limiter",
         "Convert downloads to MP3, MP4 and more",
-        "Signed automatic updates"
+        "Signed automatic updates",
+        "Torrio Player: video player that plays on the graphics card",
+        "Torrio Music: music player with playlists and an equaliser",
+        "Torrio Converter: video and audio converter using the graphics card"
       ],
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -170,6 +173,14 @@
   @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
   .card { background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 26px; }
+  .addons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .addons { grid-template-columns: 1fr; } }
+  .addon { display: grid; gap: 14px; align-content: start; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.09); border-radius: 20px; padding: 26px; color: var(--text); }
+  .addon:hover { text-decoration: none; border-color: rgba(255,255,255,.22); }
+  .addon img { width: 72px; height: 72px; border-radius: 18px; }
+  .addon h3 { margin: 0; font: 700 21px var(--display); }
+  .addon p { margin: 0; color: var(--weak); font-size: 15px; }
+  .addon .more { color: var(--cyan); font-weight: 600; font-size: 15px; }
   .card h3 { margin: 14px 0 6px; font: 700 19px var(--display); }
   .card p { margin: 0; color: var(--weak); font-size: 15px; }
   .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(139,61,255,.18); }
@@ -232,8 +243,10 @@
     <nav aria-label="Main">
       <a href="#features">Features</a>
       <a href="#tour">Tour</a>
+      <a href="#addons">Add-ons</a>
       <a href="#install">Install</a>
       <a href="#faq">FAQ</a>
+      <a href="support/">Support</a>
       <a class="nav-cta dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download</a>
     </nav>
   </div>
@@ -253,6 +266,7 @@
         <a class="btn btn-ghost" href="#tour">See it in action</a>
       </div>
       <div class="meta" id="dl-meta">Free · Windows 10 and 11 (64-bit) · no administrator rights needed</div>
+      <div class="meta">Torrio is free. If it helps you, <a href="support/" data-support>buy me a coffee ☕</a></div>
       <div class="shot"><img src="assets/screen-downloads.jpg" alt="Torrio download manager main window: downloads with progress bars and a detail panel showing eight connections" width="1320" height="820" fetchpriority="high" decoding="async"></div>
     </div>
   </div>
@@ -284,6 +298,20 @@
     </div>
   </section>
 
+  <section id="addons" style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Included add-ons</div>
+        <h2>A player, a music player and a converter, too</h2>
+        <p class="sub">They come with Torrio and work on any file on your PC. Each one can be opened on its own, from Torrio's icon next to the clock or its own desktop icon.</p>
+      </div>
+      <div class="addons">
+        <a class="addon" href="player/"><img src="assets/player-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Player</h3><p>Plays any video on the graphics card: smooth 4K, instant seeking with previews, subtitles and a mini player.</p><span class="more">About Torrio Player âº</span></a>
+        <a class="addon" href="music/"><img src="assets/music-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Music</h3><p>Your library and playlists, gapless playback, a 10-band equaliser, and music that keeps playing from the tray.</p><span class="more">About Torrio Music âº</span></a>
+        <a class="addon" href="converter/"><img src="assets/converter-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Converter</h3><p>Converts on the graphics card, copies instead of converting when it can, trims, and shows the size first.</p><span class="more">About Torrio Converter âº</span></a>
+      </div>
+    </div>
+  </section>
   <section id="tour" style="padding-top:20px">
     <div class="wrap" style="display:grid;gap:110px">
       <div class="split">
@@ -380,7 +408,7 @@
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/logo-64.png" alt="" width="24" height="24">Torrio</a>
     <span>© <span id="year">2026</span> DevNome PVT LTD · Torrio, download manager for Windows</span>
-    <div class="links"><a href="#faq">FAQ</a><a href="latest.json">latest.json</a></div>
+    <div class="links"><a href="player/">Player</a><a href="music/">Music</a><a href="converter/">Converter</a><a href="support/" data-support>Support</a><a href="#faq">FAQ</a><a href="latest.json">latest.json</a></div>
   </div>
 </footer>
 
@@ -406,5 +434,6 @@ fetch("latest.json", { cache: "no-store" })
   })
   .catch(() => {});
 </script>
+<script src="assets/support.js" defer></script>
 </body>
 </html>

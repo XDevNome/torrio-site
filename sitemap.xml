@@ -2,9 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://torrio.devnome.com/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <image:image><image:loc>https://torrio.devnome.com/assets/screen-downloads.jpg</image:loc></image:image>
     <image:image><image:loc>https://torrio.devnome.com/assets/screen-light.jpg</image:loc></image:image>
     <image:image><image:loc>https://torrio.devnome.com/assets/screen-options.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://torrio.devnome.com/player/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <image:image><image:loc>https://torrio.devnome.com/assets/screen-player.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://torrio.devnome.com/music/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <image:image><image:loc>https://torrio.devnome.com/assets/screen-music.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://torrio.devnome.com/converter/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <image:image><image:loc>https://torrio.devnome.com/assets/screen-converter.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://torrio.devnome.com/support/</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
 </urlset>
