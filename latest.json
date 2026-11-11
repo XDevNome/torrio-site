@@ -1,9 +1,9 @@
 {
-  "version": "1.0.3",
-  "date": "2026-11-08",
-  "notes": "New add-ons, included with Torrio and usable on their own: Torrio Player, Torrio Music and Torrio Converter\nTorrio Music: your library from your folders, playlists, gapless playback, a 10-band equaliser, loudness levelling, night mode, sleep timer, mini player and media keys\nTorrio Player plays any video on the graphics card: smooth 4K, instant seeking with previews, subtitles (also below the picture), audio tracks, speed, mini player, resume\nTorrio Converter: uses the graphics card, copies instead of converting when nothing needs changing, trims, presets for phones, TV and WhatsApp\nOpen the add-ons from Torrio's tray icon, their own desktop icons, or File Explorer's Open with (Options › Add-ons)\nFiles Torrio opens get their own icons: torrent, video and audio\nOnly one Torrio runs at a time, even when the browser starts it several times; the Firefox video button starts Torrio and the download when it was closed\nThe installer can fetch the player engine and video tools right away; removing Torrio ends with its own goodbye screen\nOpen folder buttons now show the right folder",
-  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.3/Torrio-Setup-1.0.3.exe",
-  "size": 39638016,
-  "sha256": "be4dbb61283d41f83dd0be707b4d231b3925d65b4b204f9201e9732f171198cc",
-  "sig": "9eb387132e52b44d5cdefa11513b425029eaa10f68f90264bb0bd1c4f0f972cee3cdbb64a4e2da167f4d7722420cb3cc411b44597398b55d8f1293061ef2d301"
+  "version": "1.0.4",
+  "date": "2026-11-11",
+  "notes": "Custom title bar for the main window\nVideo player opens many more formats (MXF, raw HEVC/H.264, AV1, DV, WTV and more), stream addresses and All files\nBrowser extension 2.6.1: the video button lists the page's streams, catches disguised HLS/DASH streams, and stays on top of ad layers\nStream downloads are faster and steadier, and the speed shown follows the data as it arrives\nData saver (on by default): nothing is downloaded twice; turn it off to have stalled stream pieces fetched again alongside\nOptions: close button in the top right corner",
+  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.4/Torrio-Setup-1.0.4.exe",
+  "size": 39691776,
+  "sha256": "42fa45540e68f230c500d83bb4e15d5e91d7118dd41253ccf539880e1bc3a91c",
+  "sig": "d5447a2109ac0c18bbd01e0465dde866c285c485fb4601fd9de57a12e7a120e71e1b37ca38ac15235f34f9b06e9323657ddc7d0fdf898592e6ccf8a7571e1609"
 }
