@@ -1,9 +1,9 @@
 {
-  "version": "1.0.4",
-  "date": "2026-11-11",
-  "notes": "Custom title bar for the main window\nVideo player opens many more formats (MXF, raw HEVC/H.264, AV1, DV, WTV and more), stream addresses and All files\nBrowser extension 2.6.1: the video button lists the page's streams, catches disguised HLS/DASH streams, and stays on top of ad layers\nStream downloads are faster and steadier, and the speed shown follows the data as it arrives\nData saver (on by default): nothing is downloaded twice; turn it off to have stalled stream pieces fetched again alongside\nOptions: close button in the top right corner",
-  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.4/Torrio-Setup-1.0.4.exe",
-  "size": 39691776,
-  "sha256": "42fa45540e68f230c500d83bb4e15d5e91d7118dd41253ccf539880e1bc3a91c",
-  "sig": "d5447a2109ac0c18bbd01e0465dde866c285c485fb4601fd9de57a12e7a120e71e1b37ca38ac15235f34f9b06e9323657ddc7d0fdf898592e6ccf8a7571e1609"
+  "version": "1.0.5",
+  "date": "2026-11-12",
+  "notes": "Copied links to video pages (YouTube, Facebook, TikTok and any other site): the download box now sees that the address is a web page and offers Download media, which lists the videos on it, next to Download page",
+  "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.5/Torrio-Setup-1.0.5.exe",
+  "size": 39731200,
+  "sha256": "9be5a8396ecfdfdc85b9d2458428ce9766e5b5bbeeb386066cdecc8bb2a54214",
+  "sig": "9de5101729f0516df1dde234df401fd95c0c09af6336f07c5a0c2910ee9988abca244e6ce12d33669ea5633d40092f7fc8dd94f7904ab7231ef194162224130b"
 }
