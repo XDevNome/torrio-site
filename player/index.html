@@ -63,17 +63,20 @@
 }
 </script>
 </head>
-<body>
+<body data-page="player">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fd8"/><stop offset=".45" stop-color="#8b3dff"/><stop offset="1" stop-color="#19d9ff"/></linearGradient></defs>
 </svg>
 <header>
   <div class="wrap">
-    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="34" height="34">Torrio</a>
+    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="32" height="32">Torrio</a>
     <nav aria-label="Main">
-      <a href="../player/" aria-current="page" style="color:var(--text)">Player</a>
+      <a href="../">Torrio</a>
+      <a href="../player/" aria-current="page">Player</a>
       <a href="../music/">Music</a>
       <a href="../converter/">Converter</a>
+      <a href="../google-drive/">Google Drive <span class="soon">Soon</span></a>
+      <a href="../onedrive/">OneDrive</a>
       <a href="../support/">Support</a>
       <a class="nav-cta dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download</a>
     </nav>
@@ -82,8 +85,7 @@
 <main id="top">
   <div class="hero addon-hero">
     <div class="wrap">
-      <div class="crumbs"><a href="../">Torrio</a> › Add-ons › Torrio Player</div>
-      <img class="hero-logo" src="../assets/player-512.png" alt="Torrio Player icon" width="128" height="128">
+      <div class="cards" data-active="player"></div>
       <h1><span class="h1-kicker">Free video player for Windows</span>Every video, smooth. <span class="grad">Even 4K.</span></h1>
       <p class="lead">Torrio Player decodes on your graphics card, so big 4K files and long recordings play smoothly and jump instantly. Open any video on your PC, a stream address or a video page.</p>
       <div class="cta">
@@ -159,9 +161,11 @@
 </main>
 <footer>
   <div class="wrap">
-    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="24" height="24">Torrio</a>
-    <span>© <span id="year">2026</span> DevNome PVT LTD · Torrio Player</span>
-    <div class="links"><a href="../player/">Player</a><a href="../music/">Music</a><a href="../converter/">Converter</a><a href="../support/" data-support>Support</a><a href="../">Download manager</a><a href="../privacy/">Privacy</a></div>
+    <div class="about"><a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="26" height="26">Torrio</a><p>A free download manager for Windows, with a video player, a music player and a converter. No ads, no accounts, no tracking.</p></div>
+    <div class="col"><h4>Torrio</h4><a href="../">Download manager</a><a href="../player/">Player</a><a href="../music/">Music</a><a href="../converter/">Converter</a></div>
+    <div class="col"><h4>Integrations</h4><a href="../google-drive/">Google Drive <span class="soon">Soon</span></a><a href="../onedrive/">OneDrive</a></div>
+    <div class="col"><h4>More</h4><a href="../support/" data-support>Support Torrio</a><a href="../privacy/">Privacy Policy</a><a class="dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download Torrio</a></div>
+    <div class="legal"><span>© <span id="year">2026</span> DevNome PVT LTD</span><span>For Windows 10 and 11</span></div>
   </div>
 </footer>
 <script>
@@ -175,6 +179,7 @@ fetch("../latest.json", { cache: "no-store" })
   })
   .catch(() => {});
 </script>
+<script src="../assets/cards.js" defer></script>
 <script src="../assets/support.js" defer></script>
 </body>
 </html>

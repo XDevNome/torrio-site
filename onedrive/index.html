@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneDrive in Torrio: Download Whole Folders from OneDrive at Once</title>
+<meta name="description" content="Torrio's OneDrive integration: sign in with Microsoft, tick files and folders in your OneDrive or a OneDrive or SharePoint shared link, and download them all at once, in the same folder structure. Read-only access, nothing leaves your PC.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://torrio.devnome.com/onedrive/">
+<meta name="application-name" content="Torrio">
+<meta name="author" content="DevNome PVT LTD">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Torrio">
+<meta property="og:url" content="https://torrio.devnome.com/onedrive/">
+<meta property="og:title" content="OneDrive in Torrio: download whole folders at once">
+<meta property="og:description" content="Tick files and folders on OneDrive and download them all as one download, with the same folder structure. Read-only, and your files go straight to your PC.">
+<meta property="og:image" content="https://torrio.devnome.com/assets/og-image.jpg">
+<meta name="theme-color" content="#0b0820">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Torrio", "item": "https://torrio.devnome.com/" },
+        { "@type": "ListItem", "position": 2, "name": "OneDrive", "item": "https://torrio.devnome.com/onedrive/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can Torrio change or delete my OneDrive files?", "acceptedAnswer": { "@type": "Answer", "text": "No. Torrio asks Microsoft for read-only access. It can list and download your files, and nothing else." } },
+        { "@type": "Question", "name": "Do my files pass through Torrio's servers?", "acceptedAnswer": { "@type": "Answer", "text": "No. Torrio has no servers for this. Files are downloaded directly from Microsoft to your PC." } },
+        { "@type": "Question", "name": "Can OneDrive zip my selection first?", "acceptedAnswer": { "@type": "Answer", "text": "OneDrive doesn't offer zipping to apps. Torrio downloads the files several at a time and, if you tick Save as one .zip, packs them into one .zip on your PC when they've all arrived." } },
+        { "@type": "Question", "name": "Does it work with work and school accounts?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with personal Microsoft accounts and with work or school accounts, including SharePoint shared links, unless your organisation blocks apps from signing in." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-page="onedrive">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fd8"/><stop offset=".45" stop-color="#8b3dff"/><stop offset="1" stop-color="#19d9ff"/></linearGradient></defs>
+</svg>
+<header>
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="32" height="32">Torrio</a>
+    <nav aria-label="Main">
+      <a href="../">Torrio</a>
+      <a href="../player/">Player</a>
+      <a href="../music/">Music</a>
+      <a href="../converter/">Converter</a>
+      <a href="../google-drive/">Google Drive <span class="soon">Soon</span></a>
+      <a href="../onedrive/" aria-current="page">OneDrive</a>
+      <a href="../support/">Support</a>
+      <a class="nav-cta dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <div class="hero addon-hero">
+    <div class="wrap">
+      <div class="cards" data-active="onedrive"></div>
+      <h1><span class="h1-kicker">OneDrive integration</span>Whole folders from OneDrive, <span class="grad">in one go.</span></h1>
+      <p class="lead">Sign in with your Microsoft account, tick the files and folders you want, and Torrio downloads them all as one download, in the same folder structure, several files at a time.</p>
+      <div class="cta">
+        <a class="btn btn-main dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 10l6 6 6-6M4 21h16"/></svg>
+          <span class="dl-text">Download Torrio for Windows</span>
+        </a>
+        <a class="btn btn-ghost" href="#data">How your data is handled</a>
+      </div>
+      <div class="meta">Free · Windows 10 and 11 · in Torrio 1.0.6 and later · read-only access</div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">How it works</div>
+        <h2>Three steps, then it runs by itself</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Sign in with Microsoft</h3><p>Open OneDrive in Torrio's sidebar and press Sign in with Microsoft. Microsoft's own sign-in page opens in your browser, and you choose what to allow there.</p></div>
+        <div class="step"><h3>Tick what you want</h3><p>Browse your files, or paste a OneDrive or SharePoint link someone shared with you. Tick files and whole folders.</p></div>
+        <div class="step"><h3>Download</h3><p>Everything you ticked becomes one download in Torrio's list. Its details show every file and how far each one has got.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" style="padding-top:0">
+    <div class="wrap">
+      <div class="features">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><h3>Same folder structure</h3><p>Folders arrive with everything inside them, sub-folders and empty folders included, exactly as they are on OneDrive.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Several files at once</h3><p>Torrio downloads a few files at the same time, each over several connections, and can pause and resume.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M12 3v2M12 7v2M12 11v2M10 15h4v3h-4z"/></svg></div><h3>One .zip if you like</h3><p>Tick Save as one .zip and everything is packed into a single .zip on your PC once it has all arrived.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></div><h3>Shared links</h3><p>Paste a OneDrive or SharePoint link to a folder or file that someone shared with you, and download it the same way.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0112 0M16 4.5a3.5 3.5 0 010 7M21 20a6 6 0 00-4-5.6"/></svg></div><h3>Personal, work and school</h3><p>Works with personal Microsoft accounts and with work or school accounts, unless your organisation blocks apps from signing in.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div><h3>Read-only</h3><p>Torrio can list and download your files. It can't change, move, share or delete anything on your OneDrive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="data" style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Your Microsoft data</div>
+        <h2>What Torrio accesses, and why</h2>
+        <p class="sub">The full details are in our <a href="../privacy/#onedrive">Privacy Policy</a>.</p>
+      </div>
+      <div class="data-box">
+        <h3>What Torrio asks Microsoft for</h3>
+        <ul>
+          <li><b>Read all files you can access</b> (<code>Files.Read.All</code>), read-only: to list and download your files, files shared with you and shared links.</li>
+          <li><b>Sign you in and read your profile</b> (<code>User.Read</code>): to show which account is signed in.</li>
+          <li><b>Keep access</b> (<code>offline_access</code>): so you don't have to sign in again every hour or every time you open Torrio.</li>
+        </ul>
+        <h3>What Torrio reads, and what it does with it</h3>
+        <ul>
+          <li><b>File and folder names, sizes and dates</b>: to show your OneDrive in Torrio so you can choose what to download.</li>
+          <li><b>The contents of the files you choose</b>: downloaded to the folder you pick on your PC. Nothing is downloaded unless you choose it.</li>
+          <li><b>Your account name and email address</b>: shown in Torrio so you can see which account is signed in.</li>
+        </ul>
+        <h3>Where it's kept</h3>
+        <ul>
+          <li>Everything stays <b>on your PC</b>. Torrio has no servers for this, and your files and data are <b>never sent to DevNome</b> or anyone else.</li>
+          <li>Your sign-in is stored on your PC, <b>encrypted by Windows</b> for your Windows account only.</li>
+          <li>Your data is <b>never sold, never used for advertising</b>, and never used to train AI or machine-learning models.</li>
+        </ul>
+        <h3>Stopping access</h3>
+        <p>Press <b>Sign out</b> in Torrio's OneDrive section to delete the saved sign-in from your PC. You can also remove Torrio's access at any time: for a personal account at <a href="https://account.live.com/consent/Manage" target="_blank" rel="noopener">account.live.com/consent/Manage</a>, for a work or school account at <a href="https://myapps.microsoft.com" target="_blank" rel="noopener">myapps.microsoft.com</a>. Files you've already downloaded stay on your PC until you delete them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Questions</div>
+        <h2>Good to know</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Can Torrio change or delete my OneDrive files?</summary><p>No. Torrio asks Microsoft for read-only access. It can list and download your files, and nothing else.</p></details>
+        <details><summary>Do my files pass through Torrio's servers?</summary><p>No. Torrio has no servers for this. Files are downloaded directly from Microsoft to your PC.</p></details>
+        <details><summary>Can OneDrive zip my selection first?</summary><p>OneDrive doesn't offer zipping to apps. Torrio downloads the files several at a time and, if you tick Save as one .zip, packs them into one .zip on your PC when they've all arrived.</p></details>
+        <details><summary>Does it work with work and school accounts?</summary><p>Yes, with personal Microsoft accounts and with work or school accounts, including SharePoint shared links, unless your organisation blocks apps from signing in.</p></details>
+      </div>
+      <p class="fineprint">Microsoft, OneDrive and SharePoint are trademarks of the Microsoft group of companies. Torrio is made by DevNome PVT LTD and is not made or endorsed by Microsoft.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="about"><a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="26" height="26">Torrio</a><p>A free download manager for Windows, with a video player, a music player and a converter. No ads, no accounts, no tracking.</p></div>
+    <div class="col"><h4>Torrio</h4><a href="../">Download manager</a><a href="../player/">Player</a><a href="../music/">Music</a><a href="../converter/">Converter</a></div>
+    <div class="col"><h4>Integrations</h4><a href="../google-drive/">Google Drive <span class="soon">Soon</span></a><a href="../onedrive/">OneDrive</a></div>
+    <div class="col"><h4>More</h4><a href="../support/" data-support>Support Torrio</a><a href="../privacy/">Privacy Policy</a><a class="dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download Torrio</a></div>
+    <div class="legal"><span>© <span id="year">2026</span> DevNome PVT LTD</span><span>For Windows 10 and 11</span></div>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+fetch("../latest.json", { cache: "no-store" })
+  .then(r => r.ok ? r.json() : Promise.reject(r.status))
+  .then(m => {
+    if (!m || !m.url || !m.version) return;
+    document.querySelectorAll(".dl-link").forEach(a => a.href = m.url);
+    document.querySelectorAll(".dl-text").forEach(t => t.textContent = "Download Torrio " + m.version);
+  })
+  .catch(() => {});
+</script>
+<script src="../assets/cards.js" defer></script>
+<script src="../assets/support.js" defer></script>
+</body>
+</html>

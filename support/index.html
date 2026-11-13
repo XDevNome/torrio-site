@@ -20,21 +20,20 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
-  .support { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 48px; align-items: start; padding: 72px 0 96px; }
-  @media (max-width: 900px) { .support { grid-template-columns: minmax(0, 1fr); padding-top: 48px; } }
-  .support h1 { font: 800 clamp(34px, 5vw, 54px)/1.06 var(--display); letter-spacing: -1px; margin: 10px 0 16px; text-wrap: balance; }
-  .support .lead { color: var(--weak); font-size: 18px; margin: 0 0 26px; max-width: 560px; }
+  .support { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 40px; align-items: start; padding: 30px 0 80px; }
+  @media (max-width: 900px) { .support { grid-template-columns: minmax(0, 1fr); } }
+  .support h2 { font-size: clamp(26px, 3vw, 32px); margin-top: 0; }
+  .support .note { color: var(--weak); font-size: 16px; margin: 6px 0 14px; }
   .goes { display: grid; gap: 12px; margin: 0 0 26px; padding: 0; list-style: none; }
-  .goes li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; }
-  .goes .ico { width: 40px; height: 40px; }
+  .goes li { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 14px; align-items: center; padding: 16px 18px; border-radius: 22px; border: 1px solid var(--line); background: var(--panel); }
   .goes b { display: block; font-weight: 600; }
   .goes span { color: var(--weak); font-size: 15px; }
-  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 16px; box-shadow: 0 30px 80px rgba(0,0,0,.45); position: sticky; top: 92px; }
+  .panel { padding: 16px; border-radius: 28px; box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 0 70px rgb(var(--tint) / .14); position: sticky; top: 92px; }
   .panel h2 { font: 700 18px var(--display); margin: 2px 4px 12px; letter-spacing: 0; }
-  .panel iframe { display: block; border: none; width: 100%; height: 712px; border-radius: 12px; background: #f9f9f9; }
+  .panel iframe { display: block; border: none; width: 100%; height: 712px; border-radius: 18px; background: #f9f9f9; }
   .thanks { color: var(--weak); font-size: 14px; margin-top: 12px; text-align: center; }
   .other { display: flex; flex-wrap: wrap; gap: 10px; }
-  .other a { padding: 9px 14px; border-radius: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: var(--text); font-size: 14px; }
+  .other a { padding: 9px 16px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line-hi); color: var(--text); font-size: 14px; }
   .other a:hover { text-decoration: none; border-color: rgba(255,255,255,.25); }
 </style>
 </head>
@@ -44,28 +43,37 @@
 </svg>
 <header>
   <div class="wrap">
-    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="34" height="34">Torrio</a>
+    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="32" height="32">Torrio</a>
     <nav aria-label="Main">
+      <a href="../">Torrio</a>
       <a href="../player/">Player</a>
       <a href="../music/">Music</a>
       <a href="../converter/">Converter</a>
-      <a href="./" aria-current="page" style="color:var(--text)">Support</a>
+      <a href="../google-drive/">Google Drive <span class="soon">Soon</span></a>
+      <a href="../onedrive/">OneDrive</a>
+      <a href="../support/" aria-current="page">Support</a>
       <a class="nav-cta dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download</a>
     </nav>
   </div>
 </header>
-<main class="wrap">
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="cards" data-active="support" data-mode="solo"></div>
+      <h1><span class="h1-kicker">Support Torrio</span>Free for everyone, <span class="grad">made by one person.</span></h1>
+      <p class="lead">Hi, I'm Razor RSD. I build Torrio in my own time: a download manager with a video player, a music player and a converter, with no ads, no accounts and no tracking. If it saves you time, a coffee helps keep it free and growing.</p>
+    </div>
+  </div>
+  <div class="wrap">
   <div class="support">
     <div>
-      <div class="kicker grad">Support Torrio</div>
-      <h1>Free for everyone, made by one person</h1>
-      <p class="lead">Hi, I'm Razor RSD. I build Torrio in my own time: a download manager with a video player, a music player and a converter, with no ads, no accounts and no tracking. If it saves you time, a coffee helps keep it free and growing.</p>
+      <h2>Where your coffee goes</h2>
       <ul class="goes">
         <li><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 10l6 6 6-6M4 21h16"/></svg></div><div><b>New features and fixes</b><span>The time that goes into every update.</span></div></li>
         <li><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>Signed, trustworthy releases</b><span>Signing, testing and keeping updates safe.</span></div></li>
         <li><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><div><b>The website and downloads</b><span>Keeping everything online and free to get.</span></div></li>
       </ul>
-      <p class="lead" style="font-size:16px;margin-bottom:14px">Other ways to help, free of charge:</p>
+      <p class="note">Other ways to help, free of charge:</p>
       <div class="other">
         <a href="../">Tell a friend about Torrio</a>
         <a href="../#faq">Read the FAQ</a>
@@ -77,18 +85,22 @@
       <p class="thanks">Payments go securely through Ko-fi. Thank you! · Panel not showing? <a href="https://ko-fi.com/razorrsd" target="_blank" rel="noopener">Open in Ko-fi</a></p>
     </div>
   </div>
+  </div>
 </main>
 <footer>
   <div class="wrap">
-    <a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="24" height="24">Torrio</a>
-    <span>© <span id="year">2026</span> DevNome PVT LTD · Support Torrio</span>
-    <div class="links"><a href="../player/">Player</a><a href="../music/">Music</a><a href="../converter/">Converter</a><a href="../">Download manager</a><a href="../privacy/">Privacy</a></div>
+    <div class="about"><a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="26" height="26">Torrio</a><p>A free download manager for Windows, with a video player, a music player and a converter. No ads, no accounts, no tracking.</p></div>
+    <div class="col"><h4>Torrio</h4><a href="../">Download manager</a><a href="../player/">Player</a><a href="../music/">Music</a><a href="../converter/">Converter</a></div>
+    <div class="col"><h4>Integrations</h4><a href="../google-drive/">Google Drive <span class="soon">Soon</span></a><a href="../onedrive/">OneDrive</a></div>
+    <div class="col"><h4>More</h4><a href="../support/">Support Torrio</a><a href="../privacy/">Privacy Policy</a><a class="dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download Torrio</a></div>
+    <div class="legal"><span>© <span id="year">2026</span> DevNome PVT LTD</span><span>For Windows 10 and 11</span></div>
   </div>
 </footer>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 fetch("../latest.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(m => { if (m && m.url) document.querySelectorAll(".dl-link").forEach(a => a.href = m.url); }).catch(() => {});
 </script>
+<script src="../assets/cards.js" defer></script>
 <script src="../assets/support.js" defer></script>
 </body>
 </html>

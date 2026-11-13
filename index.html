@@ -97,155 +97,23 @@
   ]
 }
 </script>
-<style>
-  :root {
-    /* Brand: the logo's night-blue square with a pink → violet → cyan sweep. */
-    --night: #0b0820;
-    --panel: #171236;
-    --line: #2a2356;
-    --text: #f1eefc;
-    --weak: #a49fc6;
-    --pink: #ff4fd8;
-    --violet: #8b3dff;
-    --blue: #2f5bff;
-    --cyan: #19d9ff;
-    --sweep: linear-gradient(100deg, var(--pink), var(--violet) 40%, var(--blue) 72%, var(--cyan));
-    --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    --display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--night); color: var(--text); font: 16px/1.6 var(--font); overflow-x: hidden; }
-  a { color: var(--cyan); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  img { max-width: 100%; height: auto; display: block; }
-  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-  .grad { background: var(--sweep); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
-
-  header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(11, 8, 32, .72); border-bottom: 1px solid rgba(255,255,255,.06); }
-  header .wrap { display: flex; align-items: center; height: 68px; gap: 28px; }
-  .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font: 700 20px var(--display); letter-spacing: .2px; }
-  .brand:hover { text-decoration: none; }
-  .brand img { width: 34px; height: 34px; }
-  nav { display: flex; gap: 22px; margin-left: auto; align-items: center; }
-  nav a { color: var(--weak); font-size: 15px; }
-  nav a:hover { color: var(--text); text-decoration: none; }
-  .nav-cta { padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.08); color: var(--text) !important; }
-  @media (max-width: 720px) { nav a:not(.nav-cta) { display: none; } }
-
-  .hero { position: relative; padding: 84px 0 40px; text-align: center; }
-  .hero::before { content: ""; position: absolute; inset: -120px 0 auto; height: 720px; z-index: -1;
-    background: radial-gradient(600px 320px at 30% 30%, rgba(255,79,216,.22), transparent 70%),
-                radial-gradient(640px 360px at 72% 26%, rgba(25,217,255,.18), transparent 70%),
-                radial-gradient(800px 420px at 50% 60%, rgba(139,61,255,.20), transparent 70%); }
-  .hero-logo { width: 112px; height: 112px; margin: 0 auto 26px; filter: drop-shadow(0 18px 40px rgba(139,61,255,.45)); }
-  .hero h1 { font: 800 clamp(38px, 6vw, 68px)/1.04 var(--display); letter-spacing: -1.2px; margin: 0 auto 18px; max-width: 900px; text-wrap: balance; }
-  .h1-kicker { display: block; font: 600 clamp(14px, 1.6vw, 17px)/1.4 var(--font); letter-spacing: 2px; text-transform: uppercase; color: var(--weak); margin-bottom: 16px; }
-  .hero p.lead { color: var(--weak); font-size: clamp(17px, 2vw, 20px); max-width: 660px; margin: 0 auto 34px; }
-  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border-radius: 14px; font: 700 17px var(--font); border: 0; cursor: pointer; color: #fff; }
-  .btn:hover { text-decoration: none; }
-  .btn svg { width: 20px; height: 20px; }
-  .btn-main { background: var(--sweep); box-shadow: 0 14px 40px rgba(139,61,255,.45), inset 0 1px 0 rgba(255,255,255,.25); }
-  .btn-main:hover { filter: brightness(1.08); }
-  .btn-ghost { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); }
-  .meta { margin-top: 14px; color: var(--weak); font-size: 14px; }
-  .shot { position: relative; margin: 64px auto 0; max-width: 1080px; }
-  .shot::before { content: ""; position: absolute; inset: 8% 6% -4%; background: var(--sweep); filter: blur(70px); opacity: .45; z-index: -1; border-radius: 40px; }
-  .shot img { border-radius: 14px; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 100px rgba(0,0,0,.6); }
-
-  .strip { border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02); margin-top: 72px; }
-  .strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px 24px; text-align: center; }
-  .strip b { display: block; font: 800 30px var(--display); }
-  .strip span { color: var(--weak); font-size: 14px; }
-  @media (max-width: 720px) { .strip .wrap { grid-template-columns: repeat(2, 1fr); row-gap: 22px; } }
-
-  section { padding: 96px 0; }
-  .kicker { font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; display: inline-block; }
-  h2 { font: 800 clamp(30px, 4vw, 44px)/1.12 var(--display); letter-spacing: -.6px; margin: 8px 0 14px; text-wrap: balance; }
-  .sub { color: var(--weak); max-width: 620px; margin: 0 0 44px; font-size: 18px; }
-  .center { text-align: center; }
-  .center .sub { margin-left: auto; margin-right: auto; }
-
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
-  .card { background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 26px; }
-  .addons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  @media (max-width: 900px) { .addons { grid-template-columns: 1fr; } }
-  .addon { display: grid; gap: 14px; align-content: start; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.09); border-radius: 20px; padding: 26px; color: var(--text); }
-  .addon:hover { text-decoration: none; border-color: rgba(255,255,255,.22); }
-  .addon img { width: 72px; height: 72px; border-radius: 18px; }
-  .addon h3 { margin: 0; font: 700 21px var(--display); }
-  .addon p { margin: 0; color: var(--weak); font-size: 15px; }
-  .addon .more { color: var(--cyan); font-weight: 600; font-size: 15px; }
-  .card h3 { margin: 14px 0 6px; font: 700 19px var(--display); }
-  .card p { margin: 0; color: var(--weak); font-size: 15px; }
-  .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(139,61,255,.18); }
-  .ico svg { width: 22px; height: 22px; stroke: url(#sweep); }
-
-  .split { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: center; }
-  .split.rev { grid-template-columns: 1.25fr 1fr; }
-  .split.rev .text { order: 2; }
-  @media (max-width: 900px) { .split, .split.rev { grid-template-columns: 1fr; } .split.rev .text { order: 0; } }
-  .split img { border-radius: 14px; border: 1px solid rgba(255,255,255,.1); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
-  .ticks { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
-  .ticks li { display: flex; gap: 12px; color: var(--weak); }
-  .ticks li::before { content: ""; flex: none; width: 20px; height: 20px; margin-top: 3px; border-radius: 50%; background: var(--sweep);
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.6 12l1.4-1.4 2.8 2.8 5.2-5.2 1.4 1.4-6.6 6.6z'/%3E%3C/svg%3E") center/contain no-repeat;
-            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.6 12l1.4-1.4 2.8 2.8 5.2-5.2 1.4 1.4-6.6 6.6z'/%3E%3C/svg%3E") center/contain no-repeat; }
-  .ticks b { color: var(--text); font-weight: 600; }
-
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: s; }
-  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
-  .step { position: relative; padding: 28px 24px 24px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); counter-increment: s; }
-  .step::before { content: counter(s); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--sweep); font: 800 17px var(--display); margin-bottom: 14px; }
-  .step h3 { margin: 0 0 6px; font: 700 18px var(--display); }
-  .step p { margin: 0; color: var(--weak); font-size: 15px; }
-
-  .faq { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
-  details { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; }
-  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--weak); font-size: 22px; line-height: 1; }
-  details[open] summary::after { content: "–"; }
-  details p { color: var(--weak); margin: 12px 0 0; }
-
-  .release { max-width: 820px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 28px 30px; }
-  .release h3 { margin: 0; font: 700 22px var(--display); }
-  .release .date { color: var(--weak); font-size: 14px; margin: 2px 0 14px; }
-  .release ul { margin: 0; padding-left: 20px; color: var(--weak); }
-
-  .final { text-align: center; padding: 100px 0; position: relative; }
-  .final::before { content: ""; position: absolute; inset: 20% 20%; background: var(--sweep); filter: blur(120px); opacity: .25; z-index: -1; }
-  .final img { width: 88px; margin: 0 auto 20px; }
-
-  footer { border-top: 1px solid rgba(255,255,255,.06); padding: 30px 0 40px; color: var(--weak); font-size: 14px; }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
-  footer .brand { font-size: 16px; }
-  footer .brand img { width: 24px; height: 24px; }
-  footer .links { margin-left: auto; display: flex; gap: 20px; }
-  footer a { color: var(--weak); }
-
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body data-page="home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fd8"/><stop offset=".45" stop-color="#8b3dff"/><stop offset="1" stop-color="#19d9ff"/></linearGradient></defs>
 </svg>
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/logo-64.png" alt="" width="34" height="34">Torrio</a>
+    <a class="brand" href=""><img src="assets/logo-64.png" alt="" width="32" height="32">Torrio</a>
     <nav aria-label="Main">
-      <a href="#features">Features</a>
-      <a href="#tour">Tour</a>
-      <a href="#addons">Add-ons</a>
-      <a href="#install">Install</a>
-      <a href="#faq">FAQ</a>
+      <a href="" aria-current="page">Torrio</a>
+      <a href="player/">Player</a>
+      <a href="music/">Music</a>
+      <a href="converter/">Converter</a>
+      <a href="google-drive/">Google Drive <span class="soon">Soon</span></a>
+      <a href="onedrive/">OneDrive</a>
       <a href="support/">Support</a>
       <a class="nav-cta dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download</a>
     </nav>
@@ -255,7 +123,7 @@
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <img class="hero-logo" src="assets/logo-256.png" alt="Torrio logo" width="112" height="112">
+      <div class="cards" data-active="torrio" data-mode="swap"></div>
       <h1><span class="h1-kicker">Free download manager for Windows</span>Download anything. <span class="grad">Faster.</span></h1>
       <p class="lead">Torrio splits every file across up to 32 connections, resumes where it left off, and catches downloads straight from your browser. Videos, torrents and Telegram files too. Free, with no ads and no account.</p>
       <div class="cta" id="download">
@@ -271,6 +139,7 @@
     </div>
   </div>
 
+  <div id="panel">
   <div class="strip">
     <div class="wrap">
       <div><b class="grad">32</b><span>connections per file</span></div>
@@ -306,9 +175,22 @@
         <p class="sub">They come with Torrio and work on any file on your PC. Each one can be opened on its own, from Torrio's icon next to the clock or its own desktop icon.</p>
       </div>
       <div class="addons">
-        <a class="addon" href="player/"><img src="assets/player-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Player</h3><p>Plays any video on the graphics card: smooth 4K, instant seeking with previews, subtitles and a mini player.</p><span class="more">About Torrio Player âº</span></a>
-        <a class="addon" href="music/"><img src="assets/music-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Music</h3><p>Your library and playlists, gapless playback, a 10-band equaliser, and music that keeps playing from the tray.</p><span class="more">About Torrio Music âº</span></a>
-        <a class="addon" href="converter/"><img src="assets/converter-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Converter</h3><p>Converts on the graphics card, copies instead of converting when it can, trims, and shows the size first.</p><span class="more">About Torrio Converter âº</span></a>
+        <a class="addon" href="player/"><img src="assets/player-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Player</h3><p>Plays any video on the graphics card: smooth 4K, instant seeking with previews, subtitles and a mini player.</p><span class="more">About Torrio Player ›</span></a>
+        <a class="addon" href="music/"><img src="assets/music-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Music</h3><p>Your library and playlists, gapless playback, a 10-band equaliser, and music that keeps playing from the tray.</p><span class="more">About Torrio Music ›</span></a>
+        <a class="addon" href="converter/"><img src="assets/converter-96.png" alt="" width="72" height="72" loading="lazy"><h3>Torrio Converter</h3><p>Converts on the graphics card, copies instead of converting when it can, trims, and shows the size first.</p><span class="more">About Torrio Converter ›</span></a>
+      </div>
+    </div>
+  </section>
+  <section id="cloud" style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <div class="kicker grad">Integrations</div>
+        <h2>Whole folders from Google Drive and OneDrive</h2>
+        <p class="sub">Sign in, tick files and folders, and download them all as one download, in the same folder structure. Read-only, and your files go straight from the service to your PC.</p>
+      </div>
+      <div class="addons two">
+        <a class="addon" href="google-drive/"><div class="int-ico" style="--c: rgb(40 210 150)" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4.5l8.5 14.5h-17z"/><path d="M6.4 14h11.2"/></svg></div><h3>Google Drive <span class="soon">Soon</span></h3><p>Coming soon: My Drive, Shared with me and shared links. Google Docs, Sheets and Slides are saved as Office files.</p><span class="more">About the Google Drive integration ›</span></a>
+        <a class="addon" href="onedrive/"><div class="int-ico" style="--c: rgb(70 150 255)" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18.5h10.5a4 4 0 00.4-7.98A6 6 0 006.3 9.6 4.5 4.5 0 007 18.5z"/></svg></div><h3>OneDrive</h3><p>Your OneDrive and OneDrive or SharePoint shared links, with personal, work or school accounts.</p><span class="more">About the OneDrive integration ›</span></a>
       </div>
     </div>
   </section>
@@ -402,13 +284,16 @@
       </a>
     </div>
   </div>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/logo-64.png" alt="" width="24" height="24">Torrio</a>
-    <span>© <span id="year">2026</span> DevNome PVT LTD · Torrio, download manager for Windows</span>
-    <div class="links"><a href="player/">Player</a><a href="music/">Music</a><a href="converter/">Converter</a><a href="support/" data-support>Support</a><a href="#faq">FAQ</a><a href="privacy/">Privacy</a><a href="latest.json">latest.json</a></div>
+    <div class="about"><a class="brand" href=""><img src="assets/logo-64.png" alt="" width="26" height="26">Torrio</a><p>A free download manager for Windows, with a video player, a music player and a converter. No ads, no accounts, no tracking.</p></div>
+    <div class="col"><h4>Torrio</h4><a href="">Download manager</a><a href="player/">Player</a><a href="music/">Music</a><a href="converter/">Converter</a></div>
+    <div class="col"><h4>Integrations</h4><a href="google-drive/">Google Drive <span class="soon">Soon</span></a><a href="onedrive/">OneDrive</a></div>
+    <div class="col"><h4>More</h4><a href="support/" data-support>Support Torrio</a><a href="privacy/">Privacy Policy</a><a class="dl-link" href="https://github.com/XDevNome/torrio-site/releases/latest">Download Torrio</a></div>
+    <div class="legal"><span>© <span id="year">2026</span> DevNome PVT LTD</span><span>For Windows 10 and 11</span></div>
   </div>
 </footer>
 
@@ -434,6 +319,7 @@ fetch("latest.json", { cache: "no-store" })
   })
   .catch(() => {});
 </script>
+<script src="assets/cards.js" defer></script>
 <script src="assets/support.js" defer></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 {
   "version": "1.0.5",
   "date": "2026-11-12",
-  "notes": "Copied links to video pages (YouTube, Facebook, TikTok and any other site): the download box now sees that the address is a web page and offers Download media, which lists the videos on it, next to Download page",
+  "notes": "Copied links to video pages: the download box now sees that the address is a web page and offers Download media, which lists the videos on it, next to Download page",
   "url": "https://github.com/XDevNome/torrio-site/releases/download/v1.0.5/Torrio-Setup-1.0.5.exe",
   "size": 39731200,
   "sha256": "9be5a8396ecfdfdc85b9d2458428ce9766e5b5bbeeb386066cdecc8bb2a54214",
-  "sig": "9de5101729f0516df1dde234df401fd95c0c09af6336f07c5a0c2910ee9988abca244e6ce12d33669ea5633d40092f7fc8dd94f7904ab7231ef194162224130b"
+  "sig": "b68f9c69a204fbd2394b96ee0763da7aa42f08ff9ae0042c020fe60ffa0475c1679b3b6f912474b5842d4518b9873fcf3ed4d0bcf78a4cb6509d0148887fbe02"
 }
